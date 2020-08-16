@@ -1,8 +1,7 @@
 const
   express = require('express'),
   httpStatusCodes = require('../../utilities/constants/http-status-codes'),
-
-  const router = express.Router();
+  router = express.Router();
 
 router.route('/')
   .get((request, response) => {
