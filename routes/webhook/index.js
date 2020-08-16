@@ -14,7 +14,7 @@ router.route('/')
       challenge = request.query['hub.challenge'];
 
     if (!mode || !token) {
-      return response.sendStatus(httpStatusCodes.unauthorized)
+      return response.sendStatus(httpStatusCodes.unauthorized);
     }
 
     if (mode !== 'subscribe' || token !== webhookVerificationToken) {
