@@ -22,7 +22,7 @@ app.use(forceSSL());
 // all other api routes
 app.use('/api', routes);
 
-// catchall to serve back HTML if no routes are met(frontend handles page - not - found view)
+// catchall to serve back HTML if no routes are met(frontend handles 404)
 app.get('*', (request, response) => {
   return response.sendFile(__dirname + '/dist/one-apac-frontend/index.html',
     (error) => {
