@@ -1,25 +1,4 @@
 module.exports = (function () {
-  function getPayloadByEvent(event) {
-    switch (true) {
-      case !!event.referral:
-        return event.referral.ref;
-
-      case !!event.message:
-        if (event.message.quick_reply) {
-          return event.message.quick_reply.payload;
-        }
-
-        return event.message.text;
-
-      case !!event.postback:
-        if (event.postback.referral) {
-          return event.postback.referral.ref;
-        }
-
-        return event.postback.payload;
-    }
-  }
-
   function getMessageByPayload(payload) {
     const
       Attachment = require('../../utilities/models/Attachment'),
@@ -144,8 +123,30 @@ module.exports = (function () {
     return message;
   }
 
+  function getPayloadByEvent(event) {
+    switch (true) {
+      case !!event.referral:
+        return event.referral.ref;
+
+      case !!event.message:
+        if (event.message.quick_reply) {
+          return event.message.quick_reply.payload;
+        }
+
+        return event.message.text;
+
+      case !!event.postback:
+        if (event.postback.referral) {
+          return event.postback.referral.ref;
+        }
+
+        return event.postback.payload;
+    }
+  }
+
+
   return {
-    getPayloadByEvent,
-    getMessageByPayload
+    getMessageByPayload,
+    getPayloadByEvent
   };
 })();
