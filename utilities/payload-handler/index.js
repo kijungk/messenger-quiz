@@ -34,8 +34,6 @@ module.exports = (function () {
 
         attachment = new Attachment(generic, elements);
 
-        message = new Message(attachment, quickReplies);
-
         break;
 
       case "How to Play":
@@ -56,8 +54,6 @@ module.exports = (function () {
           new QuickReply(home, 'Home')
         ];
 
-        message = new Message(attachment, quickReplies);
-
         break;
 
       case "Trivia Times":
@@ -67,8 +63,6 @@ module.exports = (function () {
           new QuickReply(back, 'How to Play'),
           new QuickReply(home, 'Home')
         ];
-
-        message = new Message(attachment, quickReplies);
 
         break;
 
@@ -80,8 +74,6 @@ module.exports = (function () {
           new QuickReply(home, 'Home')
         ];
 
-        message = new Message(attachment, quickReplies);
-
         break;
 
       case "Redeeming Points":
@@ -91,8 +83,6 @@ module.exports = (function () {
           new QuickReply(back, 'How to Play'),
           new QuickReply(home, 'Home')
         ];
-
-        message = new Message(attachment, quickReplies);
 
         break;
 
@@ -104,8 +94,6 @@ module.exports = (function () {
           new QuickReply(home, 'Home')
         ];
 
-        message = new Message(attachment, quickReplies);
-
         break;
 
       default:
@@ -115,10 +103,10 @@ module.exports = (function () {
           new QuickReply('Home', 'Home')
         ];
 
-        message = new Message(attachment, quickReplies);
-
         break;
     }
+
+    message = new Message(attachment, quickReplies);
 
     return message;
   }
@@ -143,7 +131,6 @@ module.exports = (function () {
         return event.postback.payload;
     }
   }
-
 
   return {
     getMessageByPayload,
