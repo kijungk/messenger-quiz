@@ -26,8 +26,7 @@ module.exports = (function () {
 
     axios(config)
       .then((response) => {
-        console.log(response);
-        console.log(`Message successfully sent to recipient: ${response.recipient_id}`);
+        console.log(`Message successfully sent to recipient: ${response.data.recipient_id}`);
       })
       .catch((error) => {
         return queries.errors.insert(error.name, error.message, error.stack);
