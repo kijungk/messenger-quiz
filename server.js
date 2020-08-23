@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(forceSSL());
 
 // using static frontend routes
-// app.use(express.static(__dirname + '/dist/one-apac-frontend'));
+app.use(express.static(__dirname + '/messenger-quiz-frontend'));
 
 // all other api routes
 app.use('/api', routes);
