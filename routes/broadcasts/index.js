@@ -42,7 +42,6 @@ router.route('/questions')
         return queries.errors.insert(error.name, error.message, error.stack);
       });
   });
-});
 
 router.route('/messages')
   .post((request, response) => {
