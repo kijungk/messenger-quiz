@@ -7,7 +7,7 @@ module.exports = class Attachment {
 
     switch (type) {
       case 'button':
-        // new Attachment('button', '[Buttons]', 'Choose one of the following options')
+        // new Attachment('button', '[Buttons]', 'text')
         this.payload.buttons = elements;
         this.payload.text = text;
         break;

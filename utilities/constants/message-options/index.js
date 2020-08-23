@@ -9,7 +9,10 @@ const messageOptions = {
   },
   quickReplies: {
     back: 'Back',
-    home: 'Home'
+    home: 'Home',
+    A: 'A',
+    B: 'B',
+    C: 'C'
   }
 }
 

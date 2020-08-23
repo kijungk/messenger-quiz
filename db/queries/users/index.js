@@ -14,6 +14,15 @@ module.exports = (function () {
     });
   }
 
+  function getAll() {
+    return knex.raw(`
+      SELECT
+        page_user_id
+      FROM
+        users
+    `);
+  }
+
   function insert(pageUserId) {
     return knex.raw(`
       INSERT INTO
@@ -29,6 +38,7 @@ module.exports = (function () {
 
   return {
     fetchByPageUserId,
+    getAll,
     insert
   };
 })();

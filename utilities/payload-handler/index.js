@@ -16,13 +16,16 @@ module.exports = (function () {
       } = require('../constants/message-options').buttons,
       {
         back,
-        home
+        home,
+        A,
+        B,
+        C
       } = require('../constants/message-options').quickReplies;
 
     let attachment, buttons, elements, message, quickReplies;
 
     switch (payload) {
-      case "Home":
+      case 'Home':
         buttons = [
           new Button('How to Play', postback, 'How to Play'),
           new Button('Leaderboard', postback, 'Leaderboard')
@@ -36,7 +39,7 @@ module.exports = (function () {
 
         break;
 
-      case "How to Play":
+      case 'How to Play':
         buttons = [
           new Button('Trivia Times', postback, 'Trivia Times'),
           new Button('Earning Points', postback, 'Earning Points'),
@@ -56,7 +59,7 @@ module.exports = (function () {
 
         break;
 
-      case "Trivia Times":
+      case 'Trivia Times':
         attachment = 'Not implemented.'
 
         quickReplies = [
@@ -66,7 +69,7 @@ module.exports = (function () {
 
         break;
 
-      case "Earning Points":
+      case 'Earning Points':
         attachment = 'Not implemented.'
 
         quickReplies = [
@@ -76,7 +79,7 @@ module.exports = (function () {
 
         break;
 
-      case "Redeeming Points":
+      case 'Redeeming Points':
         attachment = 'Not implemented.'
 
         quickReplies = [
@@ -86,13 +89,61 @@ module.exports = (function () {
 
         break;
 
-      case "Leaderboard":
+      case 'Leaderboard':
         attachment = 'Not implemented.'
 
         quickReplies = [
           new QuickReply(back, 'Home'),
           new QuickReply(home, 'Home')
         ];
+
+        break;
+
+      case 'Question 1':
+        attachment = `Quick knowledge check!
+        What customers might be expecting from your business with Messaging?
+        
+        A: Real time response for their enquiries
+        B: Understand their needs and expectations
+        C: All of the above`;
+
+        quickReplies = [
+          new QuickReply(A, 'Question 1 A'),
+          new QuickReply(B, 'Question 1 B'),
+          new QuickReply(C, 'Question 1 C')
+        ]
+
+        break;
+
+      case 'Question 2':
+        attachment = `Quick knowledge check!
+        What is the name of the Facebook Marketing Partners that we just introduced to you?
+        
+        A: Waffle
+        B: Pancake
+        C: Croissant`;
+
+        quickReplies = [
+          new QuickReply(A, 'Question 2 A'),
+          new QuickReply(B, 'Question 2 B'),
+          new QuickReply(C, 'Question 2 C')
+        ]
+
+        break;
+
+      case 'Question 3':
+        attachment = `Quick knowledge check!
+        What is NOT the name of Haravan's solutions?
+        
+        A: HaraFunnel
+        B: HaraSocial
+        C: HaraTunnel`;
+
+        quickReplies = [
+          new QuickReply(A, 'Question 3 A'),
+          new QuickReply(B, 'Question 3 B'),
+          new QuickReply(C, 'Question 3 C')
+        ]
 
         break;
 

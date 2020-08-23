@@ -39,7 +39,7 @@ router.route('/')
     const body = request.body;
 
     // create variables
-    let entryId, event, senderId, payload, accessToken, eventId, userId;
+    let entryId, event, senderId, payload;
 
     // if the body isn't from a page, return a bad request
     if (body.object !== 'page') {
@@ -47,7 +47,6 @@ router.route('/')
     }
 
     body.entry.forEach((entry) => {
-      accessToken = process.env.PAGE_ACCESS_TOKEN; // get access token
       entryId = entry.id; // the page entry id
       event = entry.messaging[0]; // the webhook event
       payload = getPayloadByEvent(event); // get payload based on event type
@@ -69,7 +68,7 @@ router.route('/')
         // get the response message for a corresponding payload
         const message = getMessageByPayload(payload);
 
-        return reply(accessToken, senderId, message);
+        return reply(senderId, message);
       })
       .catch((error) => {
         // save error to database
