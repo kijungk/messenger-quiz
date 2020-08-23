@@ -24,7 +24,7 @@ app.use('/api', routes);
 
 // catchall to serve back HTML if no routes are met(frontend handles 404)
 app.get('*', (request, response) => {
-  return response.sendFile(__dirname + '/dist/one-apac-frontend/index.html',
+  return response.sendFile(__dirname + '/messenger-quiz-frontend/index.html',
     (error) => {
       if (error) {
         response.status(500).json(error);
