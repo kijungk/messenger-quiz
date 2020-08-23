@@ -100,12 +100,13 @@ module.exports = (function () {
         break;
 
       case 'Question 1':
-        attachment = `Quick knowledge check!
-        What customers might be expecting from your business with Messaging?
-        
-        A: Real time response for their enquiries
-        B: Understand their needs and expectations
-        C: All of the above`;
+        attachment =
+          `Quick knowledge check!
+          What customers might be expecting from your business with Messaging?
+          
+          A: Real time response for their enquiries
+          B: Understand their needs and expectations
+          C: All of the above`;
 
         quickReplies = [
           new QuickReply(A, 'Question 1 A'),
@@ -116,12 +117,13 @@ module.exports = (function () {
         break;
 
       case 'Question 2':
-        attachment = `Quick knowledge check!
-        What is the name of the Facebook Marketing Partners that we just introduced to you?
+        attachment =
+          `Quick knowledge check!
+          What is the name of the Facebook Marketing Partners that we just introduced to you?
         
-        A: Waffle
-        B: Pancake
-        C: Croissant`;
+          A: Waffle
+          B: Pancake
+          C: Croissant`;
 
         quickReplies = [
           new QuickReply(A, 'Question 2 A'),
@@ -132,12 +134,13 @@ module.exports = (function () {
         break;
 
       case 'Question 3':
-        attachment = `Quick knowledge check!
-        What is NOT the name of Haravan's solutions?
+        attachment =
+          `Quick knowledge check!
+          What is NOT the name of Haravan's solutions?
         
-        A: HaraFunnel
-        B: HaraSocial
-        C: HaraTunnel`;
+          A: HaraFunnel
+          B: HaraSocial
+          C: HaraTunnel`;
 
         quickReplies = [
           new QuickReply(A, 'Question 3 A'),
